@@ -1,0 +1,97 @@
+
+nmap zrc :source /Users/roller/Desktop/ideavimrc/js_ideavimrc.txt <CR>
+:set surround
+:set rnu
+:set easymotion
+:set clipboard=unnamed
+":set hlsearch
+":set ignorecase
+":set incsearch
+
+nmap zp "0p
+nmap zP "0P
+imap zp <Esc>"0pa
+imap zP <Esc>"0Pa
+:nmap z: ?if (<CR>wvi(
+:nmap z; ^f=wvt;
+:nmap z\ ^v$
+:imap zz <Esc>
+:vmap zz <Esc>
+:nmap zh ^
+:imap zh <Esc>^i
+:vmap zh ^
+:nmap zl $
+:imap zl <Esc>$a
+:vmap zl $
+nmap qq ZQ
+nmap zq :wq<CR>
+
+imap zy <Esc>0mby?it(<CR>`bp?it(<CR>fdw
+nmap zy 0mby?it(<CR>`bp?it(<CR>fdw
+imap zx <Esc>ci"
+nmap zx ct"
+
+nmap zf f"
+imap zf <Esc>f"
+nmap zg F"
+imap zg <Esc>F"
+nmap zk :action Back<CR>
+imap zk <Esc>:action Back<CR>
+nmap zj :action Forward<CR>
+imap zj <Esc>:action Forward<CR>
+nmap zn :action GotoNextError<CR>
+imap zn <Esc>:action GotoNextError<CR>
+nmap zd :action GotoDeclaration<CR>
+imap zd <Esc>:action GotoDeclaration<CR>
+nmap zm :action ShowIntentionActions<CR>
+imap zm <Esc>:action ShowIntentionActions<CR>
+nmap zcp zz:action CheckinProject<CR>
+
+nmap zra :action SaveAll<CR>zz:action Rerun<CR>
+imap zra <Esc>:action SaveAll<CR>zz:action Rerun<CR>
+
+map zrr :action RenameElement<CR>
+
+vmap zrm :action ExtractMethod<CR>
+vmap S :action SurroundWithLiveTemplate<CR>
+map zro :action Move<CR>
+imap zro <Esc>:action Move<CR>
+map zri :action ChangeSignature<CR>
+imap zri <Esc>:action ChangeSignature<CR>
+map <A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+imap <A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+map <A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+imap <A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+:nmap zcc ci"
+:nmap zaa ca"
+:nmap zc' ya'
+:nmap zc" ya"
+:imap zc' <Esc>ya'a
+:imap zc" <Esc>ya"a
+
+nmap zrl :action FileStructurePopup<CR>
+nmap zrg :action Generate<CR>
+nmap zrw :action NewElementSamePlace<CR>
+
+vmap <Space> :action SelectNextOccurrence<CR>
+nmap <Space> :action AceAction<CR>
+
+imap zs this.
+imap zrv <Esc>:action IntroduceVariable<CR>
+nmap zrv :action IntroduceVariable<CR>
+vmap zrv :action IntroduceVariable<CR>
+imap zrf <Esc>:action IntroduceField<CR>
+nmap zrf :action IntroduceField<CR>
+vmap zrf :action IntroduceField<CR>
+imap zrp <Esc>:action IntroduceParameter<CR>
+nmap zrp :action IntroduceParameter<CR>
+vmap zrp :action IntroduceParameter<CR>
+imap zrn <Esc>:action Inline<CR>
+nmap zrn :action Inline<CR>
+vmap zrn :action Inline<CR>
+imap zrm <Esc>:action ExtractMethod<CR>
+nmap zrm :action ExtractMethod<CR>
+vmap zrm :action ExtractMethod<CR>
+imap zrs <Esc>:action SurroundWith<CR>
+nmap zrs :action SurroundWith<CR>
+vmap zrs :action SurroundWith<CR>
