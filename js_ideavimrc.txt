@@ -95,3 +95,11 @@ vmap zrm :action ExtractMethod<CR>
 imap zrs <Esc>:action SurroundWith<CR>
 nmap zrs :action SurroundWith<CR>
 vmap zrs :action SurroundWith<CR>
+
+vmap z' c''<Esc>PF'
+vmap z" c""<Esc>PF"
+vmap z( c()<Esc>PF(
+vmap z[ c[]<Esc>PF[
+vmap z{ c{}<Esc>PF{
+vmap z< c<><Esc>PF<
+vmap z` c``<Esc>PF`
