@@ -1,37 +1,20 @@
 
-nmap zso :source /Users/roller/Desktop/ideavimrc/py_ideavimrcc.txt <CR>
+nmap zrc :source /Users/roller/Desktop/ideavimrc/py_ideavimrcc.txt <CR>
 :set surround
 :set rnu
 :set easymotion
 :set clipboard=unnamed
-nmap z; $a;<Esc>
-imap z; <Esc>$a;
+":set hlsearch
+":set ignorecase
+":set incsearch
 
-nmap ,p "0p
-nmap ,P "0P
-imap z,p <Esc>"0pa
-imap z,P <Esc>"0Pa
 nmap zp "0p
 nmap zP "0P
 imap zp <Esc>"0pa
 imap zP <Esc>"0Pa
-:nmap z( vi(
-:nmap z) va(
-:nmap z[ vi[
-:nmap z] va[
-:nmap z{ vi{
-:nmap z} va}
-:nmap z< vit
-:nmap z> vat
-:nmap z_ F_lvt_
-:nmap z" vi"
-:nmap z' vi'
-:nmap z, ciw
 :nmap z: ^wvt:
 :nmap z; ^f=wv$
-:nmap z. viw
 :nmap z\ ^v$
-":vmap <Esc> <Esc><Esc><Esc>
 :imap zz <Esc>
 :vmap zz <Esc>
 :nmap zh ^
@@ -40,17 +23,13 @@ imap zP <Esc>"0Pa
 :nmap zl $
 :imap zl <Esc>$a
 :vmap zl $
-":nmap <BS> ^vf=h
-":nmap <CR> ^f=lv%$
 nmap qq ZQ
 nmap zq :wq<CR>
 
-imap <F1> <Esc>mby?def test<CR>`bp?def test_<CR>f_l<Esc>
-nmap <F1> mby?def test<CR>`bp?def test_<CR>f_l<Esc>
 imap zy <Esc>0mby?def <CR>`bp?def <CR>f l
 nmap zy 0mby?def <CR>`bp?def <CR>f l
-imap zx <Esc>0v?def <CR>$d^f l
-nmap zx 0v?def <CR>$d^f l
+imap zx <Esc>ct_
+nmap zx ct_
 
 nmap zf f_l
 imap zf <Esc>f_a
@@ -73,72 +52,31 @@ imap zra <Esc>zz:action RearrangeCode<CR>zz:action ReformatCode<CR>zz:action Rer
 
 map zrr :action RenameElement<CR>
 
-map zri :action Inline<CR>
-imap zri <Esc>:action Inline<CR>
-map zrf :action IntroduceField<CR>
-imap zrf <Esc>:action IntroduceField<CR>
-map zrp :action IntroduceParameter<CR>
-imap zrp <Esc>:action IntroduceParameter<CR>
-
-"nmap zsp f":action IntroduceParameter<CR>
-
-map zrv :action IntroduceVariable<CR>
-vmap zrv <Esc>:action IntroduceVariable<CR>
-imap zrv <Esc>:action IntroduceVariable<CR>
-"vmap zrm :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action ExtractMethod<CR><ESC>
-"vmap M :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action ExtractMethod<CR><ESC>
 vmap zrm :action ExtractMethod<CR>
-vmap M :action ExtractMethod<CR>
 vmap S :action SurroundWithLiveTemplate<CR>
-vmap S :action SurroundWith<CR>
-map zrt :action SearchEverywhere<CR>
-imap zrt <Esc>:action SearchEverywhere<CR>
 map zro :action Move<CR>
 imap zro <Esc>:action Move<CR>
 map zri :action ChangeSignature<CR>
 imap zri <Esc>:action ChangeSignature<CR>
-map <C-D> :action EditorDuplicateLines<CR>
-imap <C-D> <Esc>:action EditorDuplicateLines<CR>
-map <C-A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
-imap <C-A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
 map <A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
 imap <A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
-map <C-A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
-imap <C-A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
 map <A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
 imap <A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
-map zk :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
-imap zk <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
-map zj :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
-imap zj <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
-map <A-D> :action EditorDeleteLine<CR>
-imap <A-D> <Esc>:action EditorDeleteLine<CR>
-:nmap ,m :action FileStructurePopup<CR>
 :nmap zcc ci"
 :nmap zaa ca"
 :nmap zc' ya'
 :nmap zc" ya"
 :imap zc' <Esc>ya'a
 :imap zc" <Esc>ya"a
-nmap <A-u> :redo<CR>
 
-nmap ,g :action Generate<CR>
-nmap ,c :action NewElementSamePlace<CR>
+nmap zrl :action FileStructurePopup<CR>
+nmap zrg :action Generate<CR>
+nmap zrw :action NewElementSamePlace<CR>
 
 vmap <Space> :action SelectNextOccurrence<CR>
 nmap <Space> :action AceAction<CR>
-nmap <C-\> :action AceTargetAction<CR>
 
-nmap \if ?if<CR>wvt:
-nmap \\v ?if<CR>wvt::action IntroduceVariable<CR><Esc>
-nmap \\s :action ChangeSignature<CR>
-imap <A-;> <Esc>:action IntroduceVariable<CR>
-nmap <A-;> :action IntroduceVariable<CR>
-nmap <A-;> :action IntroduceVariable<CR>
-imap <A-.> self.
-nmap <A-.> iself.
 imap zs self.
-nmap zs iself.
 imap zrv <Esc>:action IntroduceVariable<CR>
 nmap zrv :action IntroduceVariable<CR>
 vmap zrv :action IntroduceVariable<CR>
@@ -154,6 +92,6 @@ vmap zrn :action Inline<CR>
 imap zrm <Esc>:action ExtractMethod<CR>
 nmap zrm :action ExtractMethod<CR>
 vmap zrm :action ExtractMethod<CR>
-imap zrl <Esc>:action ReformatCode<CR>
-nmap zrl :action ReformatCode<CR>
-vmap zrl :action ReformatCode<CR>
+imap zrs <Esc>:action SurroundWith<CR>
+nmap zrs :action SurroundWith<CR>
+vmap zrs :action SurroundWith<CR>
