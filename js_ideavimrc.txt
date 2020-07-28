@@ -14,6 +14,7 @@ imap zp <Esc>"0pa
 imap zP <Esc>"0Pa
 :nmap z: ?if (<CR>wvi(
 :nmap z; ^f=wvt;
+:nmap z, ^f:wvt,
 :nmap z\ ^v$
 :imap zz <Esc>
 :vmap zz <Esc>
@@ -69,14 +70,20 @@ imap <A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
 :imap zc' <Esc>ya'a
 :imap zc" <Esc>ya"a
 
-nmap zrl :action FileStructurePopup<CR>
+imap zrl <Esc>:action ReformatCode<CR>
+nmap zrl :action ReformatCode<CR>
+imap zrt <Esc>:action FileStructurePopup<CR>
+nmap zrt :action FileStructurePopup<CR>
+imap zrg <Esc>:action Generate<CR>
 nmap zrg :action Generate<CR>
+imap zrw <Esc>:action NewElementSamePlace<CR>
 nmap zrw :action NewElementSamePlace<CR>
 
 vmap <Space> :action SelectNextOccurrence<CR>
 nmap <Space> :action AceAction<CR>
 
 imap zs this.
+nmap zs ithis.
 imap zrv <Esc>:action IntroduceVariable<CR>
 nmap zrv :action IntroduceVariable<CR>
 vmap zrv :action IntroduceVariable<CR>
