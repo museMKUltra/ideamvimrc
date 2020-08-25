@@ -48,9 +48,6 @@ nmap zm :action ShowIntentionActions<CR>
 imap zm <Esc>:action ShowIntentionActions<CR>
 nmap zcp zz:action CheckinProject<CR>
 
-nmap zra :action SaveAll<CR>zz:action Rerun<CR>
-imap zra <Esc>:action SaveAll<CR>zz:action Rerun<CR>
-
 map zrr :action RenameElement<CR>
 
 vmap zrm :action ExtractMethod<CR>
@@ -102,6 +99,9 @@ vmap zrm :action ExtractMethod<CR>
 imap zrs <Esc>:action SurroundWith<CR>
 nmap zrs :action SurroundWith<CR>
 vmap zrs :action SurroundWith<CR>
+imap zra <Esc>:action SaveAll<CR>zz:action Rerun<CR>
+nmap zra :action SaveAll<CR>zz:action Rerun<CR>
+vmap zra :action SaveAll<CR>zz:action Rerun<CR>
 
 vmap z' c''<Esc>PF'
 vmap z" c""<Esc>PF"
