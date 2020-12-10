@@ -1,0 +1,114 @@
+
+nmap zrc :source /Users/roller/Desktop/ideavimrc/rider_ideavimrcc.txt <CR>
+:set surround
+:set rnu
+:set easymotion
+:set clipboard=unnamed
+":set hlsearch
+":set ignorecase
+":set incsearch
+
+nmap zp "0p
+nmap zP "0P
+imap zp <Esc>"0pa
+imap zP <Esc>"0Pa
+:nmap z: ?if (<CR>wvi(
+:nmap z; ^f=Wvt;
+:nmap z, ^f:Wvt,
+:nmap z\ ^v$
+:imap zz <Esc>
+:vmap zz <Esc>
+:nmap zh ^
+:imap zh <Esc>^i
+:vmap zh ^
+:nmap zl $
+:imap zl <Esc>$a
+:vmap zl $
+nmap qq ZQ
+nmap zq :wq<CR>
+
+imap zy <Esc>0mby?it(<CR>`bp?it(<CR>fdw
+nmap zy 0mby?it(<CR>`bp?it(<CR>fdw
+imap zx <Esc>ci"
+nmap zx ct"
+
+imap zae Assert.AreEqual(expected,actual);<Esc>T(
+nmap zae aAssert.AreEqual(expected,actual);<Esc>T(
+
+nmap zk :action Back<CR>
+imap zk <Esc>:action Back<CR>
+nmap zj :action Forward<CR>
+imap zj <Esc>:action Forward<CR>
+nmap zn :action ReSharperGotoPrevErrorInSolution<CR>
+imap zn <Esc>:action ReSharperGotoPrevErrorInSolution<CR>
+nmap zd :action GotoDeclaration<CR>
+nmap zD :action RdParameterDeclarationNavigationAction<CR>
+imap zd <Esc>:action GotoDeclaration<CR>
+imap zD <Esc>:action RdParameterDeclarationNavigationAction<CR>
+nmap zm :action ShowIntentionActions<CR>
+imap zm <Esc>:action ShowIntentionActions<CR>
+nmap zcp zz:action CheckinProject<CR>
+
+map zrr :action RenameElement<CR>
+
+vmap S :action SurroundWithLiveTemplate<CR>
+map zro :action Move<CR>
+imap zro <Esc>:action Move<CR>
+imap zra <Esc>:action RiderUnitTestRunSolutionAction<CR>
+nmap zra :action RiderUnitTestRunSolutionAction<CR>
+vmap zra :action RiderUnitTestRunSolutionAction<CR>
+imap zrn <Esc>:action Inline<CR>
+nmap zrn :action Inline<CR>
+vmap zrn :action Inline<CR>
+imap zrf <Esc>:action IntroduceField<CR>
+nmap zrf :action IntroduceField<CR>
+vmap zrf :action IntroduceField<CR>
+imap zrp <Esc>vaw:action IntroduceParameter<CR>
+nmap zrp vaw:action IntroduceParameter<CR>
+vmap zrp vaw:action IntroduceParameter<CR>
+imap zrm <Esc>:action ExtractMethod<CR>
+nmap zrm :action ExtractMethod<CR>
+vmap zrm :action ExtractMethod<CR>
+imap zrs <Esc>:action SurroundWith<CR>
+nmap zrs :action SurroundWith<CR>
+vmap zrs :action SurroundWith<CR>
+
+map zrv :action IntroduceVariable<CR>
+vmap zrv <Esc>:action IntroduceVariable<CR>
+imap zrv <Esc>:action IntroduceVariable<CR>
+map zri :action ChangeSignature<CR>
+imap zri <Esc>:action ChangeSignature<CR>
+map <A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+imap <A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
+map <A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+imap <A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
+:nmap zcc ci"
+:nmap zaa ca"
+:nmap zc' ya'
+:nmap zc" ya"
+:imap zc' <Esc>ya'a
+:imap zc" <Esc>ya"a
+
+nmap zbs :action BuildSolutionAction<CR>
+nmap <C-w> :action SmartSelect<CR>:action VimVisualSwapSelections<CR>
+
+imap zrl <Esc>:action ReformatCode<CR>
+nmap zrl :action ReformatCode<CR>
+imap zrt <Esc>:action FileStructurePopup<CR>
+nmap zrt :action FileStructurePopup<CR>
+imap zrg <Esc>:action Generate<CR>
+nmap zrg :action Generate<CR>
+imap zrw <Esc>:action NewElementSamePlace<CR>
+nmap zrw :action NewElementSamePlace<CR>
+
+vmap <Space> :action SelectNextOccurrence<CR>
+nmap <Space> :action AceAction<CR>
+
+:nmap zsu dd?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:action SilentCodeCleanup<CR>
+:nmap zrx dd?SetUp<CR>j%P:action SilentCodeCleanup<CR>
+
+nmap <C-CR> mza<CR><Esc>`z
+:nmap <A-l> :set rnu!<CR>
+
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
