@@ -50,7 +50,6 @@ nmap zcp zz:action CheckinProject<CR>
 
 map zrr :action RenameElement<CR>
 
-vmap zrm :action ExtractMethod<CR>
 vmap S :action SurroundWithLiveTemplate<CR>
 map zro :action Move<CR>
 imap zro <Esc>:action Move<CR>
@@ -110,3 +109,6 @@ vmap z[ c[]<Esc>PF[
 vmap z{ c{}<Esc>PF{
 vmap z< c<><Esc>PF<
 vmap z` c``<Esc>PF`
+
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
