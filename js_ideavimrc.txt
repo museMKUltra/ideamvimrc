@@ -110,5 +110,8 @@ vmap z{ c{}<Esc>PF{
 vmap z< c<><Esc>PF<
 vmap z` c``<Esc>PF`
 
+nmap <C-CR> mza<CR><Esc>`z
+:nmap <A-l> :set rnu!<CR>
+
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
