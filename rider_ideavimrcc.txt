@@ -8,6 +8,10 @@ nmap zrc :source /Users/roller/Desktop/ideavimrc/rider_ideavimrcc.txt <CR>
 ":set ignorecase
 ":set incsearch
 
+nmap <C-;> :action ReformatCode<CR>$a;<Esc>
+imap <C-;> <Esc>:action ReformatCode<CR>$a;
+vmap <C-;> <Esc>:action ReformatCode<CR>$a;<Esc>
+
 nmap zp "0p
 nmap zP "0P
 imap zp <Esc>"0pa
@@ -89,7 +93,7 @@ imap <A-J> <Esc>:action MoveLineDown<CR>:action VimAutoIndentLines<CR>
 :imap zc' <Esc>ya'a
 :imap zc" <Esc>ya"a
 
-nmap zbs :action BuildSolutionAction<CR>
+nmap zsb :action BuildSolutionAction<CR>
 nmap <C-w> :action SmartSelect<CR>:action VimVisualSwapSelections<CR>
 
 imap zrl <Esc>:action ReformatCode<CR>
@@ -100,6 +104,14 @@ imap zrg <Esc>:action Generate<CR>
 nmap zrg :action Generate<CR>
 imap zrw <Esc>:action NewElementSamePlace<CR>
 nmap zrw :action NewElementSamePlace<CR>
+
+vmap z' c''<Esc>PF'
+vmap z" c""<Esc>PF"
+vmap z( c()<Esc>PF(
+vmap z[ c[]<Esc>PF[
+vmap z{ c{}<Esc>PF{
+vmap z< c<><Esc>PF<
+vmap z` c``<Esc>PF`
 
 vmap <Space> :action SelectNextOccurrence<CR>
 nmap <Space> :action AceAction<CR>
