@@ -29,7 +29,7 @@ nmap zq :wq<CR>
 
 imap zy <Esc>0mby?it(<CR>`bp?it(<CR>fdw
 nmap zy 0mby?it(<CR>`bp?it(<CR>fdw
-imap zx <Esc>ci"
+imap zx <Esc>ct"
 nmap zx ct"
 
 nmap zf f"
