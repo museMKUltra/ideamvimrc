@@ -63,6 +63,12 @@ imap zro <Esc>:action Move<CR>
 imap zra <Esc>:action RiderUnitTestRunSolutionAction<CR>
 nmap zra :action RiderUnitTestRunSolutionAction<CR>
 vmap zra :action RiderUnitTestRunSolutionAction<CR>
+imap zrv <Esc>:action IntroduceVariable<CR>
+nmap zrv :action IntroduceVariable<CR>
+vmap zrv :action IntroduceVariable<CR>
+imap zri <Esc>:action ExtractInterface<CR>
+nmap zri :action ExtractInterface<CR>
+vmap zri :action ExtractInterface<CR>
 imap zrn <Esc>:action Inline<CR>
 nmap zrn :action Inline<CR>
 vmap zrn :action Inline<CR>
@@ -75,15 +81,13 @@ vmap zrp :action IntroduceParameter<CR>
 imap zrm <Esc>:action ExtractMethod<CR>
 nmap zrm :action ExtractMethod<CR>
 vmap zrm :action ExtractMethod<CR>
+imap zrm <Esc>:action ExtractMethod<CR>
+nmap zrm :action ExtractMethod<CR>
+vmap zrm :action ExtractMethod<CR>
 imap zrs <Esc>:action SurroundWith<CR>
 nmap zrs :action SurroundWith<CR>
 vmap zrs :action SurroundWith<CR>
 
-map zrv :action IntroduceVariable<CR>
-vmap zrv <Esc>:action IntroduceVariable<CR>
-imap zrv <Esc>:action IntroduceVariable<CR>
-map zri :action ChangeSignature<CR>
-imap zri <Esc>:action ChangeSignature<CR>
 map <A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
 imap <A-K> <Esc>:action MoveLineUp<CR>:action VimAutoIndentLines<CR>
 map <A-J> :action MoveLineDown<CR>:action VimAutoIndentLines<CR>
