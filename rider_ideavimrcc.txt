@@ -33,10 +33,12 @@ nmap zq :wq<CR>
 
 imap zs this
 nmap zs ithis
-imap zy <Esc>0mb?}<CR>V%ky`bp$B
-nmap zy 0mb?}<CR>V%ky`bp$B
-imap zx <Esc>ct(
-nmap zx ct(
+imap zy <Esc>0mb?}<CR>V%k?Test]<CR>y`bp$B
+nmap zy 0mb?}<CR>V%k?Test]<CR>y`bp$B
+imap zx <Esc>ct_
+nmap zx ct_
+imap zf <Esc>f_a
+nmap zf f_l
 
 imap zae Assert.AreEqual(expected,actual);<Esc>T(
 nmap zae aAssert.AreEqual(expected,actual);<Esc>T(
@@ -104,6 +106,7 @@ nmap <C-w> :action SmartSelect<CR>:action VimVisualSwapSelections<CR>
 
 imap zrl <Esc>:action ReformatCode<CR>
 nmap zrl :action ReformatCode<CR>
+vmap zrl <Esc>:action ReformatCode<CR>
 imap zrt <Esc>:action FileStructurePopup<CR>
 nmap zrt :action FileStructurePopup<CR>
 imap zrg <Esc>:action Generate<CR>
