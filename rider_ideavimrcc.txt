@@ -59,7 +59,7 @@ nmap zcp zz:action CheckinProject<CR>
 
 map zrr :action RenameElement<CR>
 
-vmap S :action SurroundWithLiveTemplate<CR>
+"vmap S :action SurroundWithLiveTemplate<CR>
 map zro :action Move<CR>
 imap zro <Esc>:action Move<CR>
 imap zra <Esc>:action RiderUnitTestRunSolutionAction<CR>
