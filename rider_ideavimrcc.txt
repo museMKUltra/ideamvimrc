@@ -16,10 +16,11 @@ nmap zp "0p
 nmap zP "0P
 imap zp <Esc>"0pa
 imap zP <Esc>"0Pa
-:nmap z: ?if (<CR>wvi(
-:nmap z; ^f=Wvt;
-:nmap z, ^f=Wvt,
+:nmap z: ^f(vi(
+:nmap z; ^f=wvt;
+:nmap z, ^f=wvt,
 :nmap z\ ^v$
+:nmap z| ?if (<CR>
 :imap zz <Esc>
 :vmap zz <Esc>
 :nmap zh ^
@@ -133,3 +134,4 @@ nmap <C-CR> mza<CR><Esc>`z
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+:nmap <Tab> zz:action ReformatCode<CR>
