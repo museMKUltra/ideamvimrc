@@ -20,7 +20,7 @@ imap zP <Esc>"0Pa
 :nmap z; ^f=wvt;
 :nmap z, ^f=wvt,
 :nmap z\ ^v$
-:nmap z| ?if (<CR>
+:nmap z\| ?{<CR>kVj%
 :imap zz <Esc>
 :vmap zz <Esc>
 :nmap zh ^
@@ -34,8 +34,8 @@ nmap zq :wq<CR>
 
 imap zs this
 nmap zs ithis
-imap zy <Esc>0mb?}<CR>V%k?Test]<CR>y`bp$B
-nmap zy 0mb?}<CR>V%k?Test]<CR>y`bp$B
+imap zy <Esc>0mb?}<CR>V%k?Test]<CR>y`bpzz:action ReformatCode<CR>
+nmap zy 0mb?}<CR>V%k?Test]<CR>y`bpzz:action ReformatCode<CR>
 imap zx <Esc>ct_
 nmap zx ct_
 imap zf <Esc>f_a
