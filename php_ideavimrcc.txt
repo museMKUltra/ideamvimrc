@@ -12,8 +12,6 @@ nmap zrc :source /Users/roller/Desktop/ideavimrc/php_ideavimrcc.txt <CR>
 nmap <C-;> A;<Esc>
 imap <C-;> <Esc>A;
 vmap <C-;> <Esc>A;<Esc>
-nmap <C-[> :action GotoDeclaration<CR>
-imap <C-[> <Esc>:action GotoDeclaration<CR>
 
 :nmap <Tab> :action ReformatCode<CR>zz
 
