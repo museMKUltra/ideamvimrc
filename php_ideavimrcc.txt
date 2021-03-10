@@ -1,6 +1,7 @@
 
 nmap zrc :source /Users/roller/Desktop/ideavimrc/php_ideavimrcc.txt <CR>
 
+
 :set rnu
 :set surround
 :set easymotion
@@ -20,10 +21,16 @@ nmap <Space> :action AceAction<CR>
 
 :imap zz <Esc>
 :vmap zz <Esc>
+
 :nmap zh ^
 :imap zh <Esc>^i
+:vmap zh ^
 :nmap zl $
 :imap zl <End>
+:vmap zl $
+
+:imap zs $this->
+:imap z. ->
 
 nmap zp "0p
 nmap zP "0P
@@ -51,8 +58,13 @@ nmap zq :wq<CR>
 imap <F1> <Esc>mb"2y?@test<CR>"1y?/<CR>`b"1p"2p?function<CR>wzz
 nmap <F1> mb"2y?@test<CR>"1y?/<CR>`b"1p"2p?function<CR>wzz
 
-imap <C-F1> <Esc>mb"by?function test<CR>"ay^`b"ap"bp?public<CR>J3ft2lzz<Esc>
-nmap <C-F1> mb"by?function test<CR>"ay^`b"ap"bp?public<CR>J3ft2lzz<Esc>
+imap zy <Esc>mb"by?function test<CR>"ay^`b"ap"bp?public<CR>2w:action ReformatCode<CR>
+nmap zy mb"by?function test<CR>"ay^`b"ap"bp?public<CR>2w:action ReformatCode<CR>
+imap zx <Esc>ct_
+nmap zx ct_
+imap zf <Esc>f_a
+nmap zf f_l
+
 
 imap <C-.> ->
 imap <C-,> =>
@@ -120,7 +132,7 @@ nmap zrg :action Generate<CR>
 imap zrw <Esc>:action NewElementSamePlace<CR>
 nmap zrw :action NewElementSamePlace<CR>
 
-:nmap zsu dd?class<CR>joprotected function setUp(){}<Left><CR><Esc>p:action RearrangeCode<CR>
+:nmap zsu dd?class<CR>joprotected function setUp(): void{}<Bs><Esc>po}<Esc>:action ReformatCode<CR>
 :nmap zrx dd?setUp<CR>jp:action RearrangeCode<CR>
 
 nmap <C-\> :action AceTargetAction<CR>
