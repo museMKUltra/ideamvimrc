@@ -40,7 +40,7 @@ imap zP <Esc>"0Pa
 
 :nmap z: ^f(vi(
 :nmap z; ^f=wvt;
-:nmap z, ^f:wvt,
+:nmap z, ^f=wvt,
 :nmap z\ ^v$
 
 vmap z' c''<Esc>PF'
