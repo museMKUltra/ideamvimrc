@@ -31,6 +31,7 @@ nmap <Space> :action AceAction<CR>
 
 :imap zs $this->
 :imap z. ->
+:imap z/ =>
 
 nmap zp "0p
 nmap zP "0P
@@ -39,7 +40,7 @@ imap zP <Esc>"0Pa
 
 :nmap z: ^f(vi(
 :nmap z; ^f=wvt;
-:nmap z, ^f=wvt,
+:nmap z, ^f:wvt,
 :nmap z\ ^v$
 
 vmap z' c''<Esc>PF'
