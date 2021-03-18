@@ -114,8 +114,6 @@ nmap zsp va':<bs><bs><bs><bs><bs>action IntroduceParameter<CR>
 
 map zro :action Move<CR>
 imap zro <Esc>:action Move<CR>
-map <C-D> :action EditorDuplicateLines<CR>
-imap <C-D> <Esc>:action EditorDuplicateLines<CR>
 map <A-D> :action EditorDeleteLine<CR>
 imap <A-D> <Esc>:action EditorDeleteLine<CR>
 map <A-K> :action MoveLineUp<CR>:action VimAutoIndentLines<CR>
