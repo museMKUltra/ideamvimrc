@@ -33,7 +33,8 @@ nmap qq ZQ
 nmap zq :wq<CR>
 
 imap zs this
-nmap zs ithis
+imap z/ =>
+
 imap zy <Esc>0mb?}<CR>V%k?Test]<CR>y`bpzz:action ReformatCode<CR>
 nmap zy 0mb?}<CR>V%k?Test]<CR>y`bpzz:action ReformatCode<CR>
 imap zx <Esc>ct_

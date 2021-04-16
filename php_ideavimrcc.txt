@@ -29,7 +29,8 @@ nmap <Space> :action AceAction<CR>
 :imap zl <End>
 :vmap zl $
 
-:imap zs $this->
+:imap zs this.
+:imap zd $this->
 :imap z. ->
 :imap z/ =>
 
@@ -40,7 +41,8 @@ imap zP <Esc>"0Pa
 
 :nmap z: ^f(vi(
 :nmap z; ^f=wvt;
-:nmap z, ^f=wvt,
+:nmap z, ^f:wvt,
+:nmap z> ^f>wvt,
 :nmap z\ ^v$
 
 vmap z' c''<Esc>PF'
@@ -52,7 +54,6 @@ vmap z< c<><Esc>PF<
 vmap z` c``<Esc>PF`
 
 :nmap <BS> a<BS>
-:imap zd <Esc>dd
 nmap qq ZQ
 nmap zq :wq<CR>
 :nmap <BS> a<BS>

@@ -80,6 +80,8 @@ nmap <Space> :action AceAction<CR>
 
 imap zs this.
 nmap zs ithis.
+imap z/ =>
+nmap z/ =>
 imap zrv <Esc>:action IntroduceVariable<CR>
 nmap zrv :action IntroduceVariable<CR>
 vmap zrv :action IntroduceVariable<CR>
