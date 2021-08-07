@@ -117,3 +117,4 @@ nmap <C-CR> mza<CR><Esc>`z
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+:nmap <Tab> :action ReformatCode<CR>zz
