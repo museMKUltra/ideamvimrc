@@ -14,6 +14,7 @@ imap zp <Esc>"0pa
 imap zP <Esc>"0Pa
 :nmap z: ?if (<CR>wvi(
 :nmap z; ^f=Wvt;
+:nmap z= ^f=Wv$
 :nmap z, ^f:Wvt,
 :nmap z\ ^v$
 :imap zz <Esc>

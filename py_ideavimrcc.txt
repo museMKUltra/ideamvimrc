@@ -13,7 +13,8 @@ nmap zP "0P
 imap zp <Esc>"0pa
 imap zP <Esc>"0Pa
 :nmap z: ^wvt:
-:nmap z; ^f=Wv$
+:nmap z; ^f=Wvt;
+:nmap z= ^f=Wv$
 :nmap z, ^f:Wvt,
 :nmap z\ ^v$
 :imap zz <Esc>
