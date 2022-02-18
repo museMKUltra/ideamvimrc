@@ -3,6 +3,7 @@ nmap zrc :source /Users/roller/Desktop/ideavimrc/php_ideavimrcc.txt <CR>
 
 
 :set rnu
+:set number
 :set surround
 :set easymotion
 :set clipboard=unnamed

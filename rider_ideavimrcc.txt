@@ -2,6 +2,7 @@
 nmap zrc :source /Users/roller/Desktop/ideavimrc/rider_ideavimrcc.txt <CR>
 :set surround
 :set rnu
+:set number
 :set easymotion
 :set clipboard=unnamed
 ":set hlsearch
