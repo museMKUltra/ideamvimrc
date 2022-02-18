@@ -18,7 +18,6 @@ imap zP <Esc>"0Pa
 :nmap z= ^f=Wv$
 :nmap z, ^f:Wvt,
 :nmap z\ ^v$
-:nmap z\| ?{<CR>V%
 :imap zz <Esc>
 :vmap zz <Esc>
 :nmap zh ^
