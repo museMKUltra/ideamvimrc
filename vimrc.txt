@@ -1,0 +1,59 @@
+set number
+set relativenumber
+set clipboard=unnamed
+set hlsearch
+set incsearch
+set ignorecase
+
+"esc
+inoremap zx <Esc>
+vnoremap zx <Esc>
+
+"undo & redo
+noremap U :redo<CR>
+
+"location
+nnoremap zh ^
+inoremap zh <Esc>^i
+vnoremap zh ^
+nnoremap zl $
+inoremap zl <Esc>$a
+vnoremap zl $
+noremap zy %
+inoremap zy <Esc>%
+vnoremap zy %
+
+inoremap zt <Esc>zt
+inoremap zb <Esc>zb
+inoremap zz z
+
+"selection
+noremap z- ^vf=ge
+inoremap z- <Esc>^vf=ge
+noremap z= ^f=Wvt;
+inoremap z= <Esc>^f=Wvt;
+
+nnoremap z\ $V%
+inoremap z\ <Esc>$V%
+vnoremap z\ $%
+nnoremap z\| $jVk%k$
+inoremap z\| <Esc>$jVk%k$
+vnoremap z\| <Esc>j%
+
+noremap z/ ^v$
+inoremap z/ <Esc>^v$
+noremap z? ^wvt;
+inoremap z? <Esc>^wvt;
+
+"insertion
+nnoremap zs athis
+inoremap zs this
+noremap z; $a;<Esc>
+inoremap z; <Esc>$a;<Esc>
+noremap z. a=>
+inoremap z. =>
+noremap z, a->
+inoremap z, ->
+noremap z<Space> i<Space><Esc>i
+inoremap z<Space> <Space><Esc>i
+

@@ -1,0 +1,59 @@
+source ~/.vimrc
+
+noremap zq :source ~/.ideavimrc<CR>
+
+set easymotion
+map zg <Plug>(easymotion-bd-f)
+imap zg <Esc><Plug>(easymotion-bd-f)
+
+set surround
+vmap z' S'
+vmap z" S"
+vmap z( S)
+vmap z[ S]
+vmap z{ S}
+vmap z< S>
+vmap z` S`
+vmap z> St
+
+vnoremap <Tab> :action SelectNextOccurrence<CR>
+vnoremap <S-Tab> :action UnselectPreviousOccurrence<CR>
+vnoremap <Space> :action SelectAllOccurrences<CR>
+
+noremap za :action SurroundWith<CR>
+inoremap za :action SurroundWith<CR>
+noremap zd :action CodeCompletion<CR>
+inoremap zd :action CodeCompletion<CR>
+
+noremap zu :action GotoNextError<CR>
+inoremap zu :action GotoNextError<CR>
+noremap zi :action ShowIntentionActions<CR>
+inoremap zi :action ShowIntentionActions<CR>
+
+noremap ze :action FileStructurePopup<CR>
+inoremap ze :action FileStructurePopup<CR>
+noremap zw :action ActivateTerminalToolWindow<CR>
+inoremap zw :action ActivateTerminalToolWindow<CR>
+
+noremap zk :action MethodUp<CR>
+inoremap zk :action MethodUp<CR>
+noremap zj :action MethodDown<CR>
+inoremap zj :action MethodDown<CR>
+
+noremap zr :action RenameElement<CR>
+inoremap zr :action RenameElement<CR>
+noremap zc :action IntroduceConstant<CR>
+inoremap zc :action IntroduceConstant<CR>
+noremap zv :action IntroduceVariable<CR>
+inoremap zv :action IntroduceVariable<CR>
+noremap zf :action IntroduceField<CR>
+inoremap zf :action IntroduceField<CR>
+noremap zp :action IntroduceParameter<CR>
+inoremap zp :action IntroduceParameter<CR>
+noremap zm :action ExtractMethod<CR>
+inoremap zm :action ExtractMethod<CR>
+noremap zn :action Inline<CR>
+inoremap zn :action Inline<CR>
+
+noremap zo :action OptimizeImports<CR>:action ReformatCode<CR>:action RearrangeCode<CR>
+inoremap zo <Esc>:action OptimizeImports<CR>:action ReformatCode<CR>>:action RearrangeCode<CR>
