@@ -56,4 +56,4 @@ noremap zn :action Inline<CR>
 inoremap zn :action Inline<CR>
 
 noremap zo :action OptimizeImports<CR>:action ReformatCode<CR>:action RearrangeCode<CR>
-inoremap zo <Esc>:action OptimizeImports<CR>:action ReformatCode<CR>>:action RearrangeCode<CR>
+inoremap zo <Esc>:action OptimizeImports<CR>:action ReformatCode<CR>:action RearrangeCode<CR>
