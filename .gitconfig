@@ -1,0 +1,23 @@
+[alias]
+        st = status
+        co = checkout
+        adog = log --all --decorate --oneline --graph
+        br = branch
+        cm = commit
+        df = diff
+        ft = fetch
+        pl = pull
+        ps = push
+        l = log --oneline --graph
+        ls = log --graph --pretty=format:\"%h <%an> %ar %s\"
+        ss = status -s
+        ad = add
+        cmm = commit -m
+        cma = commit --amend
+        cob = checkout -b
+        rs = reset
+        unstage = restore --staged .
+        lg = log --pretty=format:'%an committed %h'
+        la = log --oneline --graph --all
+        mg = merge
+        sw = switch
