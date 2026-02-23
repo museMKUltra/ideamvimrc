@@ -16,9 +16,9 @@ vmap z< S>
 vmap z` S`
 vmap z> St
 
-vnoremap <Tab> :action SelectNextOccurrence<CR>
+vnoremap <Space> :action SelectNextOccurrence<CR>
 vnoremap <S-Tab> :action UnselectPreviousOccurrence<CR>
-vnoremap <Space> :action SelectAllOccurrences<CR>
+vnoremap <S-Space> :action SelectAllOccurrences<CR>
 
 noremap za :action SurroundWith<CR>
 inoremap za :action SurroundWith<CR>
