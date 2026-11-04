@@ -37,6 +37,112 @@ For IdeaVim settings (also source `~/.vimrc` in file)
 
 > Shortcuts for setting extensions and actions in editor.
 
+### Usage
+
+Most shortcuts start with `z`. Several replace Vim's built-in `z` commands (e.g. folding with `zo`, `zc`, `zf`, `zd`).
+
+Modes: `n` = Normal, `i` = Insert, `v` = Visual.
+
+#### `~/.vimrc`
+
+##### Settings
+
+| Option | Description |
+| --- | --- |
+| `number` / `relativenumber` | Show the current line number and relative numbers for other lines |
+| `clipboard=unnamed` | Yank and paste use the system clipboard |
+| `hlsearch` / `incsearch` | Highlight matches, and search as you type |
+| `ignorecase` | Search ignores case |
+
+##### General
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `zx` | i, v | Return to Normal mode (`<Esc>`) |
+| `U` | n, v | Redo |
+
+##### Location
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `zh` | n, i, v | Go to the first non-blank character of the line |
+| `zl` | n, i, v | Go to the end of the line |
+| `zy` | n, i, v | Jump to the matching bracket (`%`) |
+| `zt` | i | Scroll so the current line is at the top |
+| `zb` | i | Scroll so the current line is at the bottom |
+| `zz` | i | Type a literal `z` |
+
+##### Selection
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `z-` | n, i, v | Select the left side of an assignment (the part before `=`) |
+| `z=` | n, i, v | Select the right side of an assignment (after `= `, up to `;`) |
+| `z/` | n, i, v | Select from the first non-blank character to the end of the line |
+| `z?` | n, i, v | Select from the second word up to `;`, e.g. the value in `return value;` |
+| `z\` | n, i | Select whole lines from a line ending with a bracket to its matching bracket |
+| `z\` | v | Extend the selection to the matching bracket |
+| `z\|` | n, i | Select only the lines inside a block, without the bracket lines |
+| `z\|` | v | Leave Visual mode, move down one line and jump to the matching bracket |
+
+##### Insertion
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `zs` | n, i | Insert `this` |
+| `z;` | n, i, v | Add `;` to the end of the line |
+| `z.` | n, i, v | Insert `=>` |
+| `z,` | n, i, v | Insert `->` |
+| `z<Space>` | n, i, v | Insert a space before the cursor and stay in Insert mode |
+
+#### `~/.ideavimrc`
+
+Includes every `~/.vimrc` shortcut above, plus:
+
+##### Config
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `zq` | n, v | Reload `~/.ideavimrc` |
+
+##### Extensions
+
+| Key | Modes | Extension | Description |
+| --- | --- | --- | --- |
+| `zg` | n, i, v | easymotion | Jump to a character in either direction (type a character, then the hint label) |
+| `z'` `z"` `` z` `` | v | surround | Wrap the selection in quotes or backticks |
+| `z(` `z[` `z{` `z<` | v | surround | Wrap the selection in brackets, with no inner spaces |
+| `z>` | v | surround | Wrap the selection in a tag (prompts for the tag name) |
+
+##### Multiple cursors
+
+| Key | Modes | Description |
+| --- | --- | --- |
+| `<Space>` | v | Add the next occurrence of the selection |
+| `<S-Tab>` | v | Remove the last added occurrence |
+| `<S-Space>` | v | Select all occurrences |
+
+##### IDE actions
+
+| Key | Modes | Action | Description |
+| --- | --- | --- | --- |
+| `za` | n, v | `SurroundWith` | Surround with (if, try/catch, ...) |
+| `zd` | n, v | `CodeCompletion` | Basic code completion |
+| `zu` | n, v | `GotoNextError` | Go to the next error |
+| `zi` | n, v | `ShowIntentionActions` | Show intention actions / quick fixes |
+| `ze` | n, v | `FileStructurePopup` | File structure popup |
+| `zw` | n, v | `ActivateTerminalToolWindow` | Open the terminal |
+| `zk` | n, v | `MethodUp` | Go to the previous method |
+| `zj` | n, v | `MethodDown` | Go to the next method |
+| `zr` | n, v | `RenameElement` | Rename |
+| `zc` | n, v | `IntroduceConstant` | Extract constant |
+| `zv` | n, v | `IntroduceVariable` | Extract variable |
+| `zf` | n, v | `IntroduceField` | Extract field |
+| `zp` | n, v | `IntroduceParameter` | Extract parameter |
+| `zm` | n, v | `ExtractMethod` | Extract method |
+| `zn` | n, v | `Inline` | Inline |
+| `zo` | n, v, i | `OptimizeImports` + `ReformatCode` + `RearrangeCode` | Clean up the file: optimize imports, reformat, rearrange |
+
 ## Git
 
 ### Files
