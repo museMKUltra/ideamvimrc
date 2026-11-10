@@ -1,0 +1,177 @@
+{
+  // ===== 基礎設定（對應 set ...）=====
+  "editor.lineNumbers": "relative",      // set number + relativenumber
+  "vim.useSystemClipboard": true,        // set clipboard=unnamed
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": false,
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.timeout": 300,                    // insert mode 打 z 後的等待時間（毫秒）
+
+  // ===== Ctrl 鍵分配：false = 交給 VS Code，true = 交給 Vim =====
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    // --- 交給 VS Code ---
+    "<C-a>": false,   // 全選
+    "<C-c>": false,   // 複製
+    "<C-x>": false,   // 剪下
+    "<C-v>": false,   // 貼上（區塊選取改用 Ctrl+Q）
+    "<C-z>": false,   // 復原
+    "<C-y>": false,   // 重做
+    "<C-f>": false,   // 搜尋
+    "<C-h>": false,   // 取代
+    "<C-g>": false,   // 跳到指定行
+    "<C-l>": false,   // 選取整行
+    "<C-n>": false,   // 新增檔案
+    "<C-p>": false,   // 快速開啟檔案
+    "<C-t>": false,   // 搜尋整個專案的符號
+    "<C-w>": false,   // 關閉分頁
+    "<C-b>": false,   // 開關側邊欄
+    "<C-j>": false,   // 開關下方面板
+    "<C-k>": false,   // 組合鍵前綴（Ctrl+K Ctrl+S、Ctrl+K Ctrl+C …）
+
+    // --- 保留給 Vim ---
+    "<C-d>": true,    // 往下半頁（VS Code 的「選取下一個相同字」已用 visual 的 Space 代替）
+    "<C-u>": true,    // 往上半頁
+    "<C-o>": true,    // 跳回上一個位置
+    "<C-i>": true,    // 跳到下一個位置
+    "<C-r>": true,    // 重做（insert mode 下是貼上暫存器）
+    "<C-e>": true,    // 往下捲一行
+    "<C-q>": true     // 區塊選取（代替 Ctrl+V）
+  },
+
+  // ===== 中文輸入法自動切換（裝好 im-select 後取消註解，並改成你的路徑與代號）=====
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "1033",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\tools\\im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\tools\\im-select.exe {im}",
+
+  // ===== Normal mode =====
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // undo & redo
+    { "before": ["U"], "after": ["<C-r>"] },
+
+    // location（zt / zb / zz 使用 Vim 原生功能）
+    { "before": ["z", "h"], "after": ["^"] },
+    { "before": ["z", "l"], "after": ["$"] },
+    { "before": ["z", "y"], "after": ["%"] },
+
+    // selection
+    { "before": ["z", "-"],  "after": ["^", "v", "f", "=", "g", "e"] },
+    { "before": ["z", "="],  "after": ["^", "f", "=", "W", "v", "t", ";"] },
+    { "before": ["z", "\\"], "after": ["$", "V", "%"] },
+    { "before": ["z", "|"],  "after": ["$", "j", "V", "k", "%", "k", "$"] },
+    { "before": ["z", "/"],  "after": ["^", "v", "$"] },
+    { "before": ["z", "?"],  "after": ["^", "w", "v", "t", ";"] },
+
+    // insertion
+    { "before": ["z", "s"], "after": ["a", "t", "h", "i", "s"] },
+    { "before": ["z", ";"], "after": ["$", "a", ";", "<Esc>"] },
+    { "before": ["z", "."], "after": ["a", "=", ">"] },
+    { "before": ["z", ","], "after": ["a", "-", ">"] },
+    { "before": ["z", " "], "after": ["i", " ", "<Esc>", "i"] },
+
+    // IntelliJ actions
+    { "before": ["z", "a"], "commands": ["editor.action.surroundWithSnippet"] },
+    { "before": ["z", "d"], "commands": ["editor.action.triggerSuggest"] },
+    { "before": ["z", "u"], "commands": ["editor.action.marker.next"] },
+    { "before": ["z", "i"], "commands": ["editor.action.quickFix"] },
+    { "before": ["z", "e"], "commands": ["workbench.action.gotoSymbol"] },
+    { "before": ["z", "w"], "commands": ["workbench.action.terminal.toggleTerminal"] },
+    { "before": ["z", "k"], "commands": ["gotoNextPreviousMember.previousMember"] },
+    { "before": ["z", "j"], "commands": ["gotoNextPreviousMember.nextMember"] },
+    { "before": ["z", "r"], "commands": ["editor.action.rename"] },
+    { "before": ["z", "c"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.constant" } }] },
+    { "before": ["z", "v"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.variable" } }] },
+    { "before": ["z", "f"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.field" } }] },
+    { "before": ["z", "p"], "commands": ["editor.action.refactor"] },
+    { "before": ["z", "m"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.function" } }] },
+    { "before": ["z", "n"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] },
+    { "before": ["z", "o"], "commands": ["editor.action.organizeImports", "editor.action.formatDocument"] }
+  ],
+
+  // easymotion 需要 recursive 才能展開 <leader>
+  "vim.normalModeKeyBindings": [
+    { "before": ["z", "g"], "after": ["<leader>", "<leader>", "s"] }
+  ],
+
+  // ===== Operator-pending =====
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    { "before": ["z", "y"], "after": ["%"] }
+  ],
+
+  // ===== Insert mode =====
+  "vim.insertModeKeyBindingsNonRecursive": [
+    { "before": ["z", "x"], "after": ["<Esc>"] },
+    { "before": ["z", "z"], "after": ["z"] },
+    { "before": ["z", "h"], "after": ["<Esc>", "^", "i"] },
+    { "before": ["z", "l"], "after": ["<Esc>", "$", "a"] },
+    { "before": ["z", "y"], "after": ["<Esc>", "%"] },
+    { "before": ["z", "t"], "after": ["<Esc>", "z", "t"] },
+    { "before": ["z", "b"], "after": ["<Esc>", "z", "b"] },
+
+    { "before": ["z", "-"],  "after": ["<Esc>", "^", "v", "f", "=", "g", "e"] },
+    { "before": ["z", "="],  "after": ["<Esc>", "^", "f", "=", "W", "v", "t", ";"] },
+    { "before": ["z", "\\"], "after": ["<Esc>", "$", "V", "%"] },
+    { "before": ["z", "|"],  "after": ["<Esc>", "$", "j", "V", "k", "%", "k", "$"] },
+    { "before": ["z", "/"],  "after": ["<Esc>", "^", "v", "$"] },
+    { "before": ["z", "?"],  "after": ["<Esc>", "^", "w", "v", "t", ";"] },
+
+    { "before": ["z", "s"], "after": ["t", "h", "i", "s"] },
+    { "before": ["z", ";"], "after": ["<Esc>", "$", "a", ";", "<Esc>"] },
+    { "before": ["z", "."], "after": ["=", ">"] },
+    { "before": ["z", ","], "after": ["-", ">"] },
+    { "before": ["z", " "], "after": [" ", "<Esc>", "i"] },
+
+    { "before": ["z", "a"], "commands": ["editor.action.surroundWithSnippet"] },
+    { "before": ["z", "d"], "commands": ["editor.action.triggerSuggest"] },
+    { "before": ["z", "u"], "commands": ["editor.action.marker.next"] },
+    { "before": ["z", "i"], "commands": ["editor.action.quickFix"] },
+    { "before": ["z", "e"], "commands": ["workbench.action.gotoSymbol"] },
+    { "before": ["z", "w"], "commands": ["workbench.action.terminal.toggleTerminal"] },
+    { "before": ["z", "k"], "commands": ["gotoNextPreviousMember.previousMember"] },
+    { "before": ["z", "j"], "commands": ["gotoNextPreviousMember.nextMember"] },
+    { "before": ["z", "r"], "commands": ["editor.action.rename"] },
+    { "before": ["z", "o"], "after": ["<Esc>"], "commands": ["editor.action.organizeImports", "editor.action.formatDocument"] }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    { "before": ["z", "g"], "after": ["<Esc>", "<leader>", "<leader>", "s"] }
+  ],
+
+  // ===== Visual mode =====
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": ["z", "x"], "after": ["<Esc>"] },
+    { "before": ["z", "h"], "after": ["^"] },
+    { "before": ["z", "l"], "after": ["$"] },
+    { "before": ["z", "y"], "after": ["%"] },
+    { "before": ["z", "\\"], "after": ["$", "%"] },
+    { "before": ["z", "|"],  "after": ["<Esc>", "j", "%"] },
+
+    { "before": [" "], "commands": ["editor.action.addSelectionToNextFindMatch"] },
+
+    { "before": ["z", "a"], "commands": ["editor.action.surroundWithSnippet"] },
+    { "before": ["z", "r"], "commands": ["editor.action.rename"] },
+    { "before": ["z", "c"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.constant" } }] },
+    { "before": ["z", "v"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.variable" } }] },
+    { "before": ["z", "f"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.field" } }] },
+    { "before": ["z", "p"], "commands": ["editor.action.refactor"] },
+    { "before": ["z", "m"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.function" } }] },
+    { "before": ["z", "n"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] }
+  ],
+
+  // surround（對應 vmap，用 recursive）
+  "vim.visualModeKeyBindings": [
+    { "before": ["z", "'"],  "after": ["S", "'"] },
+    { "before": ["z", "\""], "after": ["S", "\""] },
+    { "before": ["z", "("],  "after": ["S", ")"] },
+    { "before": ["z", "["],  "after": ["S", "]"] },
+    { "before": ["z", "{"],  "after": ["S", "}"] },
+    { "before": ["z", "<"],  "after": ["S", ">"] },
+    { "before": ["z", "`"],  "after": ["S", "`"] },
+    { "before": ["z", ">"],  "after": ["S", "t"] }
+  ],
+  "window.autoDetectColorScheme": true
+}

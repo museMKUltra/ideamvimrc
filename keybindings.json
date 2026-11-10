@@ -1,0 +1,6 @@
+[
+  { "key": "shift+space", "command": "editor.action.selectHighlights",
+    "when": "editorTextFocus && vim.active && vim.mode =~ /^Visual/" },
+  { "key": "shift+tab", "command": "cursorUndo",
+    "when": "editorTextFocus && vim.active && vim.mode =~ /^Visual/" }
+]
