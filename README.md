@@ -143,6 +143,115 @@ Includes every `~/.vimrc` shortcut above, plus:
 | `zn` | n, v | `Inline` | Inline |
 | `zo` | n, v, i | `OptimizeImports` + `ReformatCode` + `RearrangeCode` | Clean up the file: optimize imports, reformat, rearrange |
 
+## VS Code
+
+Brings the same `z` shortcuts to VS Code.
+
+### Extensions
+
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) (`vscodevim.vim`): required
+- [Go to Next/Previous Member](https://marketplace.visualstudio.com/items?itemName=mishkinf.goto-next-previous-member): for `zk` / `zj`
+- [im-select](https://github.com/daipeihust/im-select) (optional): switches the input method automatically when you leave Insert mode
+
+### Files
+
+Copy both files into your VS Code user folder. If you already have these files, merge the contents instead of overwriting them.
+
+| OS | Folder |
+| --- | --- |
+| Windows | `%APPDATA%\Code\User\` |
+| macOS | `~/Library/Application Support/Code/User/` |
+| Linux | `~/.config/Code/User/` |
+
+```shell
+# macOS example
+cp settings.json keybindings.json ~/Library/Application\ Support/Code/User/
+```
+
+> You can also open them from the Command Palette (`Ctrl+Shift+P`): **Preferences: Open User Settings (JSON)** and **Preferences: Open Keyboard Shortcuts (JSON)**.
+
+#### `settings.json`
+
+Vim options and every `z` mapping.
+
+#### `keybindings.json`
+
+VS Code shortcuts that VSCodeVim can't map by itself (`Shift+Space`, `Shift+Tab` in Visual mode).
+
+### Usage
+
+#### Settings
+
+| Setting | Description |
+| --- | --- |
+| `editor.lineNumbers: relative` | Relative line numbers (`set number relativenumber`) |
+| `vim.useSystemClipboard` | Yank and paste use the system clipboard (`set clipboard=unnamed`) |
+| `vim.hlsearch` / `vim.incsearch` | Highlight matches, and search as you type |
+| `vim.ignorecase` (`smartcase` off) | Search always ignores case |
+| `vim.easymotion` / `vim.surround` | Turn on the easymotion and surround emulation |
+| `vim.timeout: 300` | How long (ms) Insert mode waits after `z` for the second key |
+| `vim.autoSwitchInputMethod.*` | Switch to English (`1033`) when leaving Insert mode, using `C:\tools\im-select.exe`. Change the path and code for your machine |
+| `window.autoDetectColorScheme` | Follow the OS light/dark theme |
+
+#### Ctrl keys
+
+`vim.useCtrlKeys` is on, and `vim.handleKeys` decides who gets each key:
+
+| Goes to | Keys |
+| --- | --- |
+| VS Code | `Ctrl` + `A` `C` `X` `V` `Z` `Y` `F` `H` `G` `L` `N` `P` `T` `W` `B` `J` `K` |
+| Vim | `Ctrl` + `D` `U` `O` `I` `R` `E` `Q` |
+
+> `Ctrl+V` pastes, so use `Ctrl+Q` for Visual Block mode.
+
+#### Shortcuts
+
+The General, Location, Selection and Insertion shortcuts work the same as in `~/.vimrc`, except:
+
+- In Visual mode, only `zx`, `zh`, `zl`, `zy`, `z\` and `z|` work. The selection (`z-` `z=` `z/` `z?`) and insertion (`z;` `z.` `z,` `z<Space>`) shortcuts work in Normal and Insert mode only.
+- `zy` also works after an operator, e.g. `dzy` deletes to the matching bracket.
+- `zq` (reload config) doesn't exist. VS Code reloads `settings.json` when you save it.
+
+##### Extensions
+
+| Key | Modes | Extension | Description |
+| --- | --- | --- | --- |
+| `zg` | n, i | easymotion | Jump to a character (type a character, then the hint label) |
+| `z'` `z"` `` z` `` | v | surround | Wrap the selection in quotes or backticks |
+| `z(` `z[` `z{` `z<` | v | surround | Wrap the selection in brackets, with no inner spaces |
+| `z>` | v | surround | Wrap the selection in a tag (prompts for the tag name) |
+
+##### Multiple cursors
+
+| Key | Modes | Command | Description |
+| --- | --- | --- | --- |
+| `<Space>` | v | `editor.action.addSelectionToNextFindMatch` | Add the next occurrence of the selection |
+| `<S-Tab>` | v | `cursorUndo` | Remove the last added occurrence (`keybindings.json`) |
+| `<S-Space>` | v | `editor.action.selectHighlights` | Select all occurrences (`keybindings.json`) |
+
+##### IDE actions
+
+| Key | Modes | Command | Description |
+| --- | --- | --- | --- |
+| `za` | n, i, v | `editor.action.surroundWithSnippet` | Surround with a snippet |
+| `zd` | n, i | `editor.action.triggerSuggest` | Code completion |
+| `zu` | n, i | `editor.action.marker.next` | Go to the next error |
+| `zi` | n, i | `editor.action.quickFix` | Quick fix |
+| `ze` | n, i | `workbench.action.gotoSymbol` | Go to a symbol in the file |
+| `zw` | n, i | `workbench.action.terminal.toggleTerminal` | Toggle the terminal |
+| `zk` | n, i | `gotoNextPreviousMember.previousMember` | Go to the previous member |
+| `zj` | n, i | `gotoNextPreviousMember.nextMember` | Go to the next member |
+| `zr` | n, i, v | `editor.action.rename` | Rename |
+| `zc` | n, v | `refactor.extract.constant` | Extract constant |
+| `zv` | n, v | `refactor.extract.variable` | Extract variable |
+| `zf` | n, v | `refactor.extract.field` | Extract field |
+| `zp` | n, v | `editor.action.refactor` | Open the Refactor menu (VS Code has no "extract parameter") |
+| `zm` | n, v | `refactor.extract.function` | Extract function |
+| `zn` | n, v | `refactor.inline` | Inline |
+| `zo` | n, i | `editor.action.organizeImports` + `editor.action.formatDocument` | Clean up the file: organize imports, then format |
+
+> The extract and inline commands only work when the language extension supports that refactoring.
+
 ## Git
 
 ### Files
